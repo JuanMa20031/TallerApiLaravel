@@ -17,6 +17,12 @@ class Carro extends Model
         'descripcion',
         'disponible',
         'tipo_combustible',
-        'fecha_fabricacion'
+        'fecha_fabricacion',
+        'categoria_id'
     ];
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
 }

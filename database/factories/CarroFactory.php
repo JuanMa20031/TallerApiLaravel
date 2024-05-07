@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Carro;
+use App\Models\Categoria;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -28,7 +29,8 @@ class CarroFactory extends Factory
             'descripcion' => $this->faker->text,
             'disponible' => $this->faker->boolean,
             'tipo_combustible' => $this->faker->randomElement(['Gasolina', 'Diesel', 'Eléctrico', 'Híbrido']),
-            'fecha_fabricacion' => $this->faker->dateTimeBetween('-5 years', 'now')
+            'fecha_fabricacion' => $this->faker->dateTimeBetween('-5 years', 'now'),
+            'categoria_id' => Categoria::inRandomOrder()->first()->id
         ];
     }
 }

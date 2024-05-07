@@ -29,7 +29,8 @@ class CarroUpdateRequest extends FormRequest
             'descripcion' => ['nullable', 'string', 'max:1000'],
             'disponible' => ['sometimes', 'boolean'],
             'tipo_combustible' => ['sometimes', 'string', 'in:Gasolina,Diesel,Eléctrico,Híbrido'],
-            'fecha_fabricacion' => ['sometimes', 'date']
+            'fecha_fabricacion' => ['sometimes', 'date'],
+            'categoria_id' => 'exists:categorias,id',
         ];
     }
 }

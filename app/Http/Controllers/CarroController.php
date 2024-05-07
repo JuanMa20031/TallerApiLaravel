@@ -17,7 +17,7 @@ class CarroController extends Controller
 
     public function show($id)
     {
-        $carro = Carro::findOrFail($id);
+        $carro = Carro::with('categoria')->findOrFail($id);
         return response()->json($carro);
     }
 
